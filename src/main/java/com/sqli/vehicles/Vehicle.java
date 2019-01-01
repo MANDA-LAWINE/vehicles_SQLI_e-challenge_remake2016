@@ -34,12 +34,12 @@ abstract class Vehicle {
             for (Door door :
                     doors) {
 
-                if ((door.doorNumber() == 4 && doors.size() > 2) || (door.doorNumber() == 2 && doors.size() < 3))
+                if (door.doorNumber() == doors.size())
                     result += "_" + door.getContent();
                 else
                     result += " " + door.getContent();
 
-                if (door.doorNumber() == 2 && doors.size() > 2)
+                if (door.doorNumber() % 2 == 0 && doors.size() != door.doorNumber())
                     result += "\n";
             }
         }
