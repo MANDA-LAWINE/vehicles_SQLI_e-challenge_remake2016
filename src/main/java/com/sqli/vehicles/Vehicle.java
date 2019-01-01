@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract class Vehicle {
-    protected List<Door> doors = new ArrayList<>();
-    protected Fuel fuel;
-    protected Double consumption = 0d;
-    protected boolean doorOpenFlag = false;
+    List<Door> doors = new ArrayList<>();
+    Fuel fuel;
+    Double consumption = 0d;
+    boolean doorOpenFlag = false;
 
 
     abstract Integer numberOfDoors();
 
     abstract String consumption();
 
-    protected abstract void createDoors();
+    abstract void createDoors();
 
     void move(String distance) {
         if (doorOpenFlag) {

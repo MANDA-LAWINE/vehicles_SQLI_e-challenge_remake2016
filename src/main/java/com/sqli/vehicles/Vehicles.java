@@ -3,7 +3,7 @@ package com.sqli.vehicles;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Vehicles {
+class Vehicles {
 
     private Map<String, Vehicle> vehicles = new HashMap<>();
 
@@ -33,19 +33,19 @@ public class Vehicles {
         }
     }
 
-    public void move(String vehicle, String distance) {
+    void move(String vehicle, String distance) {
         vehicles.get(vehicle).move(distance);
     }
 
-    public String status(String vehicle) {
+    String status(String vehicle) {
         return vehicles.get(vehicle).status();
     }
 
-    public String consumption(String vehicle) {
+    String consumption(String vehicle) {
         return vehicles.get(vehicle).consumption();
     }
 
-    public void openDoor(String vehicle, String doorNumber) throws IllegalAccessException {
+    void openDoor(String vehicle, String doorNumber) throws IllegalAccessException {
         if (vehicles.get(vehicle).numberOfDoors() != 0) {
             vehicles.get(vehicle).openDoor(Integer.valueOf(doorNumber));
             vehicles.get(vehicle).setDoorOpenFlag(true);
